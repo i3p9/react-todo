@@ -1,0 +1,50 @@
+.task{
+    border-radius: 5px;
+    align-items: right;
+    justify-content: flex-end;
+    border: 1px solid #939697;
+    cursor: pointer;
+    background-color: #00ADB5;
+    height: 50px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #EEEEEE;
+}
+.task span{
+    font-family: 'Mona Sans',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.task button{
+    background-color: #EEEEEE;
+    color: #00ADB5;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.taskname {
+    justify-self: flex-start;
+    align-self: center;
+    flex: 1;
+}
+
+.editForm{
+    justify-self: flex-start;
+    align-self: center;
+    flex: 1;
+    border: none;
+    border-radius: .25rem;
+    padding-left: 3px;
+    height: 35px;
+}
+
