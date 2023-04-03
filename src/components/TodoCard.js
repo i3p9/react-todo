@@ -4,7 +4,7 @@ import { FaEdit, FaTrashAlt, FaSave } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
 
 
-export default function TodoCard({ children, todoId, items, setItems, editing}){
+export default function TodoCard({ children, todoId, items, setItems, editing }) {
     const notifyEdited = () => toast('Task Edited!');
     const notifyDeleted = () => toast('Task Deleted!');
 
@@ -12,7 +12,7 @@ export default function TodoCard({ children, todoId, items, setItems, editing}){
     const [editMode, setEditMode] = React.useState(editing);
     const [todoItem, setTodoItem] = React.useState(children);
 
-    function handleDeletion(){
+    function handleDeletion() {
         console.log('handle delete');
         console.log(todoId);
         const nextItems = [...items];
@@ -23,7 +23,7 @@ export default function TodoCard({ children, todoId, items, setItems, editing}){
         notifyDeleted();
     }
 
-    function handleEdit(){
+    function handleEdit() {
         console.log('editing?');
         setEditMode(true);
         // return(
@@ -31,11 +31,11 @@ export default function TodoCard({ children, todoId, items, setItems, editing}){
         // )
     }
 
-    function saveEdited(event){
+    function saveEdited(event) {
         console.log('saving edited stuff');
         const nextItems = [...items];
         nextItems.forEach((item) => {
-            if (item.id === todoId){
+            if (item.id === todoId) {
                 item.text = todoItem;
             }
         });
@@ -46,32 +46,34 @@ export default function TodoCard({ children, todoId, items, setItems, editing}){
     }
 
     const viewMode = (
-            <div className={styles.task}>
+        <div className={styles.task}>
             <div className={styles.taskname}>
                 {children}
             </div>
             <button onClick={handleEdit} className={styles.delete}>
-            <FaEdit/>
+                <FaEdit />
             </button>
             <button onClick={handleDeletion} className={styles.delete}>
-                <FaTrashAlt/>
+                <FaTrashAlt />
             </button>
         </div>
 
     );
 
     const editModePage = (
+        <form onSubmit={saveEdited}>
             <div className={styles.task}>
-            <input className={styles.editForm} id="taskname" value={todoItem}
-            onChange={event => setTodoItem(event.target.value)}>
-            </input>
-            <button onClick={saveEdited} className={styles.delete}>
-                <FaSave/>
-            </button>
-        </div>
+                <input className={styles.editForm} id="taskname" value={todoItem}
+                    onChange={event => setTodoItem(event.target.value)}>
+                </input>
+                <button className={styles.delete}>
+                    <FaSave />
+                </button>
+            </div>
+        </form>
     );
 
-    return(
+    return (
         (editMode == false) ? viewMode : editModePage
     )
 
