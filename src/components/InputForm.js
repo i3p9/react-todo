@@ -20,20 +20,10 @@ export default function InputForm({ children, items, setItems, setShowInputForm 
     return (
         <form onSubmit={handleNewTodo}>
             <div className="input-group mb-3">
-                <input type="text" placeholder="add new todo item, eg. run 5k today" className="form-control" value={todoItem} onChange={event => setTodoItem(event.target.value)}></input>
+                <input autoFocus type="text" placeholder="add new todo item, eg. run 5k today" className="form-control" value={todoItem} onChange={event => setTodoItem(event.target.value)}></input>
                 <button style={{background: "#00ADB5", border: "none", color: "white"}} className="btn btn-outline-secondary"><FaSave /></button>
             </div>
         </form>
 
     );
 };
-
-
-{/* <div>
-<form onSubmit={handleNewTodo}>
-    <label htmlFor='addTodoForm'>{children}</label>
-    <input className={styles.addNewInput} placeholder={todoItem} id='addTodoForm' type='text' value={todoItem} onChange={event => setTodoItem(event.target.value)}></input>
-    <button><FaSave /></button>
-</form>
-
-</div> */}

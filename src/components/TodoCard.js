@@ -7,7 +7,7 @@ import { icons } from 'react-icons';
 
 export default function TodoCard({ children, todoId, items, setItems, editing, done }) {
     const notifyEdited = () => toast.success('Task Edited!');
-    const notifyDeleted = () => toast('Task Deleted!',{icon: '🗑️'});
+    const notifyDeleted = () => toast('Task Deleted!', { icon: '🗑️' });
     const notifyMarked = () => toast.success('Marking as Complete');
     const notifyUnmarked = () => toast.success('Marking as Incomplete');
 
@@ -30,9 +30,6 @@ export default function TodoCard({ children, todoId, items, setItems, editing, d
     function handleEdit() {
         console.log('editing?');
         setEditMode(true);
-        // return(
-        //     <EditTodoCard items={items} setItems={setItems} todoId={todoId}>{children}</EditTodoCard>
-        // )
     }
 
     function saveEdited(event) {
@@ -46,7 +43,6 @@ export default function TodoCard({ children, todoId, items, setItems, editing, d
         setItems(nextItems);
         setEditMode(false);
         notifyEdited();
-
     }
 
     function handleMarkAsDone(event) {
@@ -60,9 +56,9 @@ export default function TodoCard({ children, todoId, items, setItems, editing, d
         setItems(nextItems);
         if (isChecked) {
             notifyUnmarked()
-         } else {
+        } else {
             notifyMarked()
-         }
+        }
     }
 
     const viewMode = (
