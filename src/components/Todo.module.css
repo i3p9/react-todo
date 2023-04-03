@@ -71,7 +71,6 @@ body{
 }
 
 .addNewInput {
-
     box-shadow: inset #abacaf 0 0 0 2px;
     border: 0;
     background: rgba(0, 0, 0, 0);
@@ -97,4 +96,12 @@ body{
     background: #fff;
     outline: 0;
     box-shadow: 0 0 0 0 #fff inset, black 0 0 0 3px;
+}
+
+.doneText {
+    background-color: #EEEEEE;
+    font-size: 1.3rem;
+    font-weight: 800;
+    font-stretch: 110%;
+    margin-top: 25px;
 }

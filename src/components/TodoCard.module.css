@@ -15,12 +15,8 @@
     margin-right: 10px;
     color: #EEEEEE;
 }
-.task span{
-    font-family: 'Mona Sans',sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-}
-.task button{
+
+.icons{
     background-color: #EEEEEE;
     color: #00ADB5;
     border: none;
@@ -32,10 +28,33 @@
     margin-left: 10px;
 }
 
+.doneIcon {
+    background-color: #00ADB5;
+    color: #EEEEEE;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 2em;
+    margin-top: 3px;
+}
+
 .taskname {
     justify-self: flex-start;
     align-self: center;
     flex: 1;
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.tasknameDone {
+    text-decoration:line-through;
+    justify-self: flex-start;
+    align-self: center;
+    flex: 1;
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .editForm{
@@ -48,3 +67,4 @@
     height: 35px;
 }
 
+/* checkbox */

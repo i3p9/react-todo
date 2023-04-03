@@ -4,13 +4,13 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function InputForm({ children, items, setItems, setShowInputForm }) {
-    const notify = () => toast('New task added!');
+    const notify = () => toast.success('New task added!');
 
     const [todoItem, setTodoItem] = React.useState('');
     function handleNewTodo(event) {
         event.preventDefault();
         const nextItems = [...items];
-        const newItem = { "text": todoItem, "id": crypto.randomUUID() }
+        const newItem = { "text": todoItem, "id": crypto.randomUUID(), "done": false }
         nextItems.push(newItem);
         console.log('input text');
         setItems(nextItems);
