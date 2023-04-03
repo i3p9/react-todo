@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 export default function InputForm({ children, items, setItems, setShowInputForm }) {
     const notify = () => toast('New task added!');
 
-    const [todoItem, setTodoItem] = React.useState('Add new item')
+    const [todoItem, setTodoItem] = React.useState('');
     function handleNewTodo(event) {
         event.preventDefault();
         const nextItems = [...items];
@@ -20,7 +20,7 @@ export default function InputForm({ children, items, setItems, setShowInputForm 
     return (
         <form onSubmit={handleNewTodo}>
             <div className="input-group mb-3">
-                <input type="text" className="form-control" value={todoItem} onChange={event => setTodoItem(event.target.value)}></input>
+                <input type="text" placeholder="add new todo item, eg. run 5k today" className="form-control" value={todoItem} onChange={event => setTodoItem(event.target.value)}></input>
                 <button style={{background: "#00ADB5", border: "none", color: "white"}} className="btn btn-outline-secondary"><FaSave /></button>
             </div>
         </form>

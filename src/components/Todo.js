@@ -31,7 +31,7 @@ export default function Todo() {
                 <button className={styles.addNewButton} onClick={addNewItem}>Add New <FaPlusSquare/></button>
             </div>
             {showInputForm &&
-                <div className='item3' style={{ 'padding': '10px' }}>
+                <div className='item3' style={{ padding: '10px', transition: "right 1s ease-in-out" }}>
                     <InputForm setShowInputForm={setShowInputForm} items={items} setItems={setItems}>Add New</InputForm>
                 </div>
             }
