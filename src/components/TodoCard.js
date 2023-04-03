@@ -10,11 +10,22 @@ export default function TodoCard({ children, todoId, items, setItems, editing, d
     const notifyDeleted = () => toast('Task Deleted!', { icon: '🗑️' });
     const notifyMarked = () => toast.success('Marking as Complete');
     const notifyUnmarked = () => toast.success('Marking as Incomplete');
+    const allMarkedDone = () => toast('Great job, all tasks are completed!')
+
 
 
     const [isChecked, setIsChecked] = React.useState(done);
     const [editMode, setEditMode] = React.useState(editing);
     const [todoItem, setTodoItem] = React.useState(children);
+
+    function showAllDoneNotification(){
+        const pending = items.filter((item) => {
+            return item.done == false;
+        });
+        if (pending.length){
+            allMarkedDone();
+        }
+    }
 
     function handleDeletion() {
         console.log('handle delete');
@@ -55,9 +66,9 @@ export default function TodoCard({ children, todoId, items, setItems, editing, d
         });
         setItems(nextItems);
         if (isChecked) {
-            notifyUnmarked()
+            notifyUnmarked();
         } else {
-            notifyMarked()
+            notifyMarked();
         }
     }
 

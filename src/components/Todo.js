@@ -6,6 +6,8 @@ import {FaPlusSquare} from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function Todo() {
+    const allMarkedDone = () => toast('Great job, all tasks are completed!')
+
     const [items, setItems] = React.useState(() => {
         return JSON.parse(localStorage.getItem('items')) || []
       });
@@ -16,6 +18,7 @@ export default function Todo() {
       React.useEffect(() => {
         localStorage.setItem('items', JSON.stringify(items));
       }, [items]);
+
 
     function addNewItem() {
         console.log("here");
@@ -36,7 +39,6 @@ export default function Todo() {
         return items.done == false;
     });
 
-    const notify = () => toast('Great! All tasks are completed!')
 
     return (
         <div className={styles.container}>
